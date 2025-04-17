@@ -1,4 +1,4 @@
-import Announcement from "./components/announcement";
+import Announcement from "./components/Announcement";
 import Navbar from "./components/Navbar";
 
 function App() {
