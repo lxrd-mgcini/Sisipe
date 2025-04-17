@@ -1,7 +1,11 @@
+import Announcement from "./components/announcement";
+import Navbar from "./components/Navbar";
+
 function App() {
   return (
     <div>
-      <h1>Sisepe</h1>
+      <Announcement />
+      <Navbar />
     </div>
   );
 }
