@@ -1,13 +1,7 @@
-import Announcement from "./components/Announcement";
-import Navbar from "./components/Navbar";
+import Home from "./pages/Home";
 
 function App() {
-  return (
-    <div>
-      <Announcement />
-      <Navbar />
-    </div>
-  );
+  return <Home />;
 }
 
 export default App;
