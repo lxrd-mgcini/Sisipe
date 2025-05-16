@@ -51,7 +51,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="lg: flex flex-col justify-self-start sm:justify-self-start md:justify-self-start lg:justify-self-end">
+        <div className="lg: flex flex-col justify-self-start sm:justify-self-start md:justify-self-start lg:justify-self-center">
           <p className="font-semibold">Contact Us</p>
           <p className="font-light">
             Cnr 9th Avenue, J.M.Nkomo St,
