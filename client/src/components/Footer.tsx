@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Twitter, Youtube } from "lucide-react";
+import { Facebook, Instagram, Mail, Twitter, Youtube } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -14,9 +14,19 @@ export default function Footer() {
             <input
               type="email"
               placeholder="example@gmail.com"
-              className="border-[1px] border-white bg-transparent px-2 py-2"
+              className="border-[1px] border-white bg-transparent px-2 py-2 focus-visible:outline-none"
             />
-            <button className="bg-white px-4 py-2 text-black">Subscribe</button>
+            {/* <button className="bg-white px-4 py-2 text-black">Subscribe</button> */}
+
+            <button className="group relative inline-flex items-center justify-center overflow-hidden bg-black px-1 py-1 font-medium text-black transition duration-500 ease-out">
+              <span className="ease bg-primary/[200] absolute inset-0 flex h-full w-full -translate-x-full items-center justify-center text-black duration-300 group-hover:translate-x-0">
+                <Mail size={20} />
+              </span>
+              <span className="ease absolute flex h-full w-full transform items-center justify-center text-white transition-all duration-300 group-hover:translate-x-full">
+                Subscribe
+              </span>
+              <span className="invisible relative">View Product</span>
+            </button>
           </div>
           <p className="mt-4 text-xs text-white/70">
             By clicking the “Subscribe” button, you agree to the terms of use of
@@ -24,10 +34,10 @@ export default function Footer() {
           </p>
 
           <div className="mt-4 flex gap-4">
-            <Instagram />
-            <Facebook />
-            <Twitter />
-            <Youtube />
+            <Instagram className="hover:text-background transition duration-300 ease-in-out hover:scale-125 hover:cursor-pointer" />
+            <Facebook className="hover:text-background transition duration-300 ease-in-out hover:scale-125 hover:cursor-pointer" />
+            <Twitter className="hover:text-background transition duration-300 ease-in-out hover:scale-125 hover:cursor-pointer" />
+            <Youtube className="hover:text-background transition duration-300 ease-in-out hover:scale-125 hover:cursor-pointer" />
           </div>
         </div>
 

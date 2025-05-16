@@ -26,8 +26,9 @@ export default function PopularProducts() {
           <Card productName={card.productName} price={card.price} />
         ))}
       </div>
-      <button className="bg-background ml-auto mr-auto flex w-[200px] cursor-pointer items-center justify-center justify-self-center pb-3 pl-3 pr-3 pt-3 font-semibold text-black">
-        More Products
+      <button className="bg-primary group relative inline-block w-[200px] self-center overflow-hidden px-5 py-5 font-medium text-black">
+        <span className="absolute left-0 top-0 mb-0 flex h-0 w-full translate-y-0 transform bg-black transition-all duration-300 ease-out group-hover:h-full"></span>
+        <span className="relative group-hover:text-white">More Products</span>
       </button>
     </div>
   );
