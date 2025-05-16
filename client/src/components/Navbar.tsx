@@ -5,20 +5,28 @@ export default function Navbar() {
     <>
       <div className="flex items-center justify-between ml-4 mr-4 text-black h-[72px]">
         <div className="flex gap-4">
-          <Search className="hidden sm:flex gap-4" size={24} color="#4a463f" />
-          <MapPin className="hidden sm:flex gap-4" size={24} color="#4a463f" />
+          <Search
+            className="hidden sm:flex gap-4 cursor-pointer"
+            size={24}
+            color="#4a463f"
+          />
+          <MapPin
+            className="hidden sm:flex gap-4 cursor-pointer"
+            size={24}
+            color="#4a463f"
+          />
         </div>
-        <h1 className="flex text-4xl text-black font-semibold mr-auto ml-auto ">
+        <h1 className="flex text-4xl text-black font-semibold mr-auto ml-auto cursor-pointer">
           Sisipe
         </h1>
         <div className="flex gap-4">
           <ShoppingBag
-            className="hidden sm:flex gap-4"
+            className="hidden sm:flex gap-4 cursor-pointer"
             size={24}
             color="#4a463f"
           />
           <UserRound
-            className="hidden sm:flex gap-4"
+            className="hidden sm:flex gap-4 cursor-pointer"
             size={24}
             color="#4a463f"
           />
