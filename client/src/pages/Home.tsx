@@ -12,7 +12,7 @@ import Footer from "../components/Footer";
 
 export default function Home() {
   return (
-    <div className="max-w-full">
+    <div className="relative max-w-full">
       <Announcement />
       <Navbar />
       <MainLayout>

@@ -1,7 +1,16 @@
-import { MapPin, Menu, Search, ShoppingBag, UserRound } from "lucide-react";
+import { MapPin, Menu, Search, ShoppingBag, UserRound, X } from "lucide-react";
 import { SetStateAction, useState } from "react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 export default function Navbar() {
+  const [activeTab, setActiveTab] = useState(0);
+  const [mobileNavOpen, setMobileNavOpen] = useState(false);
+
   const Hair = function () {
     return (
       <div className="absolute left-0 z-20 mt-4 h-[60vh] w-full border-t-[1px] border-t-black50 bg-white px-8 py-4 text-black">
@@ -130,7 +139,6 @@ export default function Navbar() {
       </div>
     );
   };
-  const [activeTab, setActiveTab] = useState(0);
 
   const handleTabClick = (tab: SetStateAction<number>) => {
     console.log(tab);
@@ -144,9 +152,88 @@ export default function Navbar() {
       document.body.style.overflow = "hidden";
     }
   };
+
+  const MobileNav = function () {
+    return (
+      <div className="fixed right-[0px] top-0 z-30 flex w-full flex-col bg-black/35 pl-32">
+        <div className="flex h-screen gap-2 bg-white px-4 pt-14">
+          <ul className="flex-[9]">
+            <Accordion type="single" collapsible>
+              <AccordionItem value="item-1" className="border-none">
+                <AccordionTrigger>Skin</AccordionTrigger>
+                <AccordionContent>
+                  Yes. It adheres to the WAI-ARIA design pattern.
+                </AccordionContent>
+                <AccordionContent>
+                  Yes. It adheres to the WAI-ARIA design pattern.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-2" className="border-none">
+                <AccordionTrigger>Body</AccordionTrigger>
+                <AccordionContent>
+                  Yes. It adheres to the WAI-ARIA design pattern.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-3" className="border-none">
+                <AccordionTrigger>Hair</AccordionTrigger>
+                <AccordionContent>
+                  Yes. It adheres to the WAI-ARIA design pattern.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-4" className="border-none">
+                <AccordionTrigger>Gifting</AccordionTrigger>
+                <AccordionContent>
+                  Yes. It adheres to the WAI-ARIA design pattern.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-5" className="border-none">
+                <AccordionTrigger>Trending</AccordionTrigger>
+                <AccordionContent>
+                  Yes. It adheres to the WAI-ARIA design pattern.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-6" className="border-none">
+                <AccordionTrigger>Collections</AccordionTrigger>
+                <AccordionContent>
+                  Yes. It adheres to the WAI-ARIA design pattern.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-7" className="border-none">
+                <AccordionTrigger>Men's</AccordionTrigger>
+                <AccordionContent>
+                  Yes. It adheres to the WAI-ARIA design pattern.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-8" className="border-none">
+                <AccordionTrigger>Fragrances</AccordionTrigger>
+                <AccordionContent>
+                  Yes. It adheres to the WAI-ARIA design pattern.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </ul>
+          <button
+            className="flex flex-[1]"
+            onClick={() => {
+              setMobileNavOpen(!mobileNavOpen);
+              if (mobileNavOpen === true) {
+                document.body.style.overflow = "auto";
+                return;
+              } else {
+                document.body.style.overflow = "hidden";
+              }
+            }}
+          >
+            <X color="#4a463f" />
+          </button>
+        </div>
+      </div>
+    );
+  };
+
   return (
     <>
-      <div className="ml-4 mr-4 flex h-[72px] items-center justify-between">
+      <div className="ml-4 mr-4 flex h-[72px] items-center justify-between overflow-hidden">
         <div className="flex gap-4">
           <Search
             className="hidden cursor-pointer gap-4 sm:flex"
@@ -173,7 +260,16 @@ export default function Navbar() {
             size={24}
             color="#4a463f"
           />
-          <Menu className="flex sm:hidden" size={24} color="#4a463f" />
+          <Menu
+            onClick={() => {
+              console.log(mobileNavOpen);
+              setMobileNavOpen(!mobileNavOpen);
+            }}
+            className="flex sm:hidden"
+            size={24}
+            color="#4a463f"
+          />
+          {mobileNavOpen && <MobileNav />}
         </div>
       </div>
       <div className="mb-4 mt-4 flex w-full justify-center font-light text-black">

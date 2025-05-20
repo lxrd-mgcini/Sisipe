@@ -31,8 +31,8 @@ export default function NewProducts() {
           <Card productName={card.productName} price={card.price} />
         ))}
       </div>
-      <button className="bg-primary group relative inline-block w-[200px] self-center overflow-hidden px-5 py-5 font-medium text-black">
-        <span className="absolute left-0 top-0 mb-0 flex h-0 w-full translate-y-0 transform bg-black opacity-90 transition-all duration-500 ease-out group-hover:h-full"></span>
+      <button className="bg-brand group relative inline-block w-[200px] self-center overflow-hidden px-5 py-5 font-medium text-black">
+        <span className="absolute left-0 top-0 mb-0 flex h-0 w-full translate-y-0 transform bg-black transition-all duration-300 ease-out group-hover:h-full"></span>
         <span className="relative group-hover:text-white">More Products</span>
       </button>
     </div>

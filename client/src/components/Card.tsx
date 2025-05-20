@@ -17,7 +17,7 @@ export default function Card({ productName, price }: Props) {
       </div>
       {/* <button className="h-10 bg-black text-white">Add to cart</button> */}
       <button className="group relative inline-flex items-center justify-center overflow-hidden bg-black p-4 px-6 py-1 font-medium text-black transition duration-500 ease-out">
-        <span className="ease bg-primary/[200] absolute inset-0 flex h-full w-full -translate-x-full items-center justify-center text-black duration-300 group-hover:translate-x-0">
+        <span className="ease bg-brand/[200] absolute inset-0 flex h-full w-full -translate-x-full items-center justify-center text-black duration-300 group-hover:translate-x-0">
           <ShoppingBag size={20} />
         </span>
         <span className="ease absolute flex h-full w-full transform items-center justify-center text-white transition-all duration-300 group-hover:translate-x-full">
