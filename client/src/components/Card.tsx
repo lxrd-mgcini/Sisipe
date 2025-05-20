@@ -12,7 +12,7 @@ export default function Card({ productName, price }: Props) {
         <img
           src="/images/body-care.jpg"
           alt=""
-          className="aspect-square w-full object-cover object-center transition duration-500 ease-in-out hover:scale-110"
+          className="h-fulll aspect-square w-full object-cover object-center transition duration-500 ease-in-out hover:scale-110"
         />
       </div>
 
