@@ -158,9 +158,9 @@ export default function Navbar() {
       <div className="fixed right-[0px] top-0 z-30 flex w-full flex-col bg-black/35 pl-32">
         <div className="flex h-screen items-start gap-2 bg-white px-4 pt-14">
           <ul className="flex-[9]">
-            <Accordion type="single" collapsible>
-              <AccordionItem value="item-1" className="border-none">
-                <AccordionTrigger>Skin</AccordionTrigger>
+            <Accordion type="single" collapsible className="bg-white">
+              <AccordionItem value="item-1" className="border-none bg-inherit">
+                <AccordionTrigger className="bg-inherit">Skin</AccordionTrigger>
                 <AccordionContent>
                   Yes. It adheres to the WAI-ARIA design pattern.
                 </AccordionContent>
