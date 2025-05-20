@@ -51,7 +51,7 @@ export default function Catagories() {
                 <button className="group relative inline-flex items-center justify-center overflow-hidden bg-white px-12 py-6 font-medium text-black transition hover:scale-110">
                   <span>Shop Now</span>
                   <div className="absolute inset-0 flex h-full w-full justify-center [transform:skew(-12deg)_translateX(-100%)] group-hover:duration-1000 group-hover:[transform:skew(-12deg)_translateX(100%)]">
-                    <div className="bg-brand/20 relative h-full w-8"></div>
+                    <div className="relative h-full w-8 bg-brand/20"></div>
                   </div>
                 </button>
               </div>
