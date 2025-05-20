@@ -156,7 +156,7 @@ export default function Navbar() {
   const MobileNav = function () {
     return (
       <div className="fixed right-[0px] top-0 z-30 flex w-full flex-col bg-black/35 pl-32">
-        <div className="flex h-screen gap-2 bg-white px-4 pt-14">
+        <div className="flex h-screen items-start gap-2 bg-white px-4 pt-14">
           <ul className="flex-[9]">
             <Accordion type="single" collapsible>
               <AccordionItem value="item-1" className="border-none">
@@ -213,7 +213,7 @@ export default function Navbar() {
             </Accordion>
           </ul>
           <button
-            className="flex flex-[1]"
+            className="flex h-6 w-6 flex-[1]"
             onClick={() => {
               setMobileNavOpen(!mobileNavOpen);
               if (mobileNavOpen === true) {
@@ -277,7 +277,7 @@ export default function Navbar() {
           <div>
             <li
               onClick={() => handleTabClick(1)}
-              className="relative cursor-pointer px-2 py-1 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:w-full after:origin-bottom after:scale-x-0 after:bg-neutral-800 after:transition-transform after:duration-300 after:ease-[cubic-bezier(0.65_0.05_0.36_1)] hover:after:origin-bottom hover:after:scale-x-100"
+              className="after:ease-[cubic-bezier(0.65_0.05_0.36_1)] relative cursor-pointer px-2 py-1 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:w-full after:origin-bottom after:scale-x-0 after:bg-neutral-800 after:transition-transform after:duration-300 hover:after:origin-bottom hover:after:scale-x-100"
               style={
                 activeTab === 1
                   ? {
@@ -297,7 +297,7 @@ export default function Navbar() {
           <div>
             <li
               onClick={() => handleTabClick(2)}
-              className="relative cursor-pointer px-2 py-1 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:w-full after:origin-bottom after:scale-x-0 after:bg-neutral-800 after:transition-transform after:duration-300 after:ease-[cubic-bezier(0.65_0.05_0.36_1)] hover:after:origin-bottom hover:after:scale-x-100"
+              className="after:ease-[cubic-bezier(0.65_0.05_0.36_1)] relative cursor-pointer px-2 py-1 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:w-full after:origin-bottom after:scale-x-0 after:bg-neutral-800 after:transition-transform after:duration-300 hover:after:origin-bottom hover:after:scale-x-100"
               style={
                 activeTab === 2
                   ? {
@@ -317,7 +317,7 @@ export default function Navbar() {
           <div>
             <li
               onClick={() => handleTabClick(3)}
-              className="relative cursor-pointer px-2 py-1 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:w-full after:origin-bottom after:scale-x-0 after:bg-neutral-800 after:transition-transform after:duration-300 after:ease-[cubic-bezier(0.65_0.05_0.36_1)] hover:after:origin-bottom hover:after:scale-x-100"
+              className="after:ease-[cubic-bezier(0.65_0.05_0.36_1)] relative cursor-pointer px-2 py-1 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:w-full after:origin-bottom after:scale-x-0 after:bg-neutral-800 after:transition-transform after:duration-300 hover:after:origin-bottom hover:after:scale-x-100"
               style={
                 activeTab === 3
                   ? {
@@ -338,7 +338,7 @@ export default function Navbar() {
           <div>
             <li
               onClick={() => handleTabClick(4)}
-              className="relative cursor-pointer px-2 py-1 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:w-full after:origin-bottom after:scale-x-0 after:bg-neutral-800 after:transition-transform after:duration-300 after:ease-[cubic-bezier(0.65_0.05_0.36_1)] hover:after:origin-bottom hover:after:scale-x-100"
+              className="after:ease-[cubic-bezier(0.65_0.05_0.36_1)] relative cursor-pointer px-2 py-1 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:w-full after:origin-bottom after:scale-x-0 after:bg-neutral-800 after:transition-transform after:duration-300 hover:after:origin-bottom hover:after:scale-x-100"
               style={
                 activeTab === 4
                   ? {
@@ -359,7 +359,7 @@ export default function Navbar() {
           <div>
             <li
               onClick={() => handleTabClick(5)}
-              className="relative cursor-pointer px-2 py-1 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:w-full after:origin-bottom after:scale-x-0 after:bg-neutral-800 after:transition-transform after:duration-300 after:ease-[cubic-bezier(0.65_0.05_0.36_1)] hover:after:origin-bottom hover:after:scale-x-100"
+              className="after:ease-[cubic-bezier(0.65_0.05_0.36_1)] relative cursor-pointer px-2 py-1 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:w-full after:origin-bottom after:scale-x-0 after:bg-neutral-800 after:transition-transform after:duration-300 hover:after:origin-bottom hover:after:scale-x-100"
               style={
                 activeTab === 5
                   ? {
@@ -380,7 +380,7 @@ export default function Navbar() {
           <div>
             <li
               onClick={() => handleTabClick(6)}
-              className="relative cursor-pointer px-2 py-1 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:w-full after:origin-bottom after:scale-x-0 after:bg-neutral-800 after:transition-transform after:duration-300 after:ease-[cubic-bezier(0.65_0.05_0.36_1)] hover:after:origin-bottom hover:after:scale-x-100"
+              className="after:ease-[cubic-bezier(0.65_0.05_0.36_1)] relative cursor-pointer px-2 py-1 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:w-full after:origin-bottom after:scale-x-0 after:bg-neutral-800 after:transition-transform after:duration-300 hover:after:origin-bottom hover:after:scale-x-100"
               style={
                 activeTab === 6
                   ? {
@@ -401,7 +401,7 @@ export default function Navbar() {
           <div>
             <li
               onClick={() => handleTabClick(7)}
-              className="relative cursor-pointer px-2 py-1 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:w-full after:origin-bottom after:scale-x-0 after:bg-neutral-800 after:transition-transform after:duration-300 after:ease-[cubic-bezier(0.65_0.05_0.36_1)] hover:after:origin-bottom hover:after:scale-x-100"
+              className="after:ease-[cubic-bezier(0.65_0.05_0.36_1)] relative cursor-pointer px-2 py-1 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:w-full after:origin-bottom after:scale-x-0 after:bg-neutral-800 after:transition-transform after:duration-300 hover:after:origin-bottom hover:after:scale-x-100"
               style={
                 activeTab === 7
                   ? {
@@ -422,7 +422,7 @@ export default function Navbar() {
           <div>
             <li
               onClick={() => handleTabClick(8)}
-              className="relative cursor-pointer px-2 py-1 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:w-full after:origin-bottom after:scale-x-0 after:bg-neutral-800 after:transition-transform after:duration-300 after:ease-[cubic-bezier(0.65_0.05_0.36_1)] hover:after:origin-bottom hover:after:scale-x-100"
+              className="after:ease-[cubic-bezier(0.65_0.05_0.36_1)] relative cursor-pointer px-2 py-1 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:w-full after:origin-bottom after:scale-x-0 after:bg-neutral-800 after:transition-transform after:duration-300 hover:after:origin-bottom hover:after:scale-x-100"
               style={
                 activeTab === 8
                   ? {
