@@ -168,43 +168,43 @@ export default function Navbar() {
                   Yes. It adheres to the WAI-ARIA design pattern.
                 </AccordionContent>
               </AccordionItem>
-              <AccordionItem value="item-2" className="border-none">
+              <AccordionItem value="item-2" className="border-none bg-inherit">
                 <AccordionTrigger>Body</AccordionTrigger>
                 <AccordionContent>
                   Yes. It adheres to the WAI-ARIA design pattern.
                 </AccordionContent>
               </AccordionItem>
-              <AccordionItem value="item-3" className="border-none">
+              <AccordionItem value="item-3" className="border-none bg-inherit">
                 <AccordionTrigger>Hair</AccordionTrigger>
                 <AccordionContent>
                   Yes. It adheres to the WAI-ARIA design pattern.
                 </AccordionContent>
               </AccordionItem>
-              <AccordionItem value="item-4" className="border-none">
+              <AccordionItem value="item-4" className="border-none bg-inherit">
                 <AccordionTrigger>Gifting</AccordionTrigger>
                 <AccordionContent>
                   Yes. It adheres to the WAI-ARIA design pattern.
                 </AccordionContent>
               </AccordionItem>
-              <AccordionItem value="item-5" className="border-none">
+              <AccordionItem value="item-5" className="border-none bg-inherit">
                 <AccordionTrigger>Trending</AccordionTrigger>
                 <AccordionContent>
                   Yes. It adheres to the WAI-ARIA design pattern.
                 </AccordionContent>
               </AccordionItem>
-              <AccordionItem value="item-6" className="border-none">
+              <AccordionItem value="item-6" className="border-none bg-inherit">
                 <AccordionTrigger>Collections</AccordionTrigger>
                 <AccordionContent>
                   Yes. It adheres to the WAI-ARIA design pattern.
                 </AccordionContent>
               </AccordionItem>
-              <AccordionItem value="item-7" className="border-none">
+              <AccordionItem value="item-7" className="border-none bg-inherit">
                 <AccordionTrigger>Men's</AccordionTrigger>
                 <AccordionContent>
                   Yes. It adheres to the WAI-ARIA design pattern.
                 </AccordionContent>
               </AccordionItem>
-              <AccordionItem value="item-8" className="border-none">
+              <AccordionItem value="item-8" className="border-none bg-inherit">
                 <AccordionTrigger>Fragrances</AccordionTrigger>
                 <AccordionContent>
                   Yes. It adheres to the WAI-ARIA design pattern.
@@ -213,7 +213,7 @@ export default function Navbar() {
             </Accordion>
           </ul>
           <button
-            className="flex h-6 w-6 flex-[1]"
+            className="flex h-6 w-6 flex-[1] bg-inherit"
             onClick={() => {
               setMobileNavOpen(!mobileNavOpen);
               if (mobileNavOpen === true) {
