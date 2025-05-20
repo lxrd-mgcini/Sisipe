@@ -7,12 +7,12 @@ type Props = {
 
 export default function Card({ productName, price }: Props) {
   return (
-    <div className="flex aspect-square max-h-full w-full flex-1 flex-col text-center">
-      <div className="relative aspect-square h-full w-full overflow-hidden">
+    <div className="flex aspect-square h-full w-full flex-1 flex-col text-center">
+      <div className="relative aspect-square h-max w-full overflow-hidden">
         <img
           src="/images/body-care.jpg"
           alt=""
-          className="h-fulll aspect-square w-full object-cover object-center transition duration-500 ease-in-out hover:scale-110"
+          className="h-[100vw] w-full object-cover object-center transition duration-500 ease-in-out hover:scale-110 sm:h-full"
         />
       </div>
 

@@ -31,7 +31,7 @@ export default function Features() {
       <div className="grid grid-cols-1 grid-rows-1 gap-4 sm:grid-cols-3">
         {features.map((feature) => (
           <div
-            className="flex flex-1 flex-col items-center px-8 pb-12 pt-12"
+            className="flex flex-1 flex-col items-center px-8 py-6 pb-12 pt-12 md:px-6"
             style={{ backgroundColor: feature.color }}
           >
             <p className="text-black">{feature.icon}</p>

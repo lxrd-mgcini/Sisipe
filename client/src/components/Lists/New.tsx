@@ -26,7 +26,7 @@ export default function NewProducts() {
   return (
     <div className="mt-8 flex h-max flex-col gap-8 text-center">
       <h1 className="text-4xl font-semibold text-black">New Arrivals</h1>
-      <div className="grid grid-cols-1 grid-rows-1 gap-4 sm:grid-cols-4">
+      <div className="mt-4 grid grid-cols-1 grid-rows-1 gap-4 sm:grid-cols-2 md:grid-cols-4">
         {cardData.map((card) => (
           <Card productName={card.productName} price={card.price} />
         ))}
