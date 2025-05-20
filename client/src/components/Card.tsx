@@ -7,15 +7,15 @@ type Props = {
 
 export default function Card({ productName, price }: Props) {
   return (
-    <div className="flex w-full flex-1 flex-col text-center">
-      <div className="relative aspect-square w-full overflow-hidden">
+    <div className="flex aspect-square h-auto w-full flex-1 flex-col text-center">
+      <div className="relative aspect-square h-auto w-full overflow-hidden">
         <img
           src="/images/body-care.jpg"
           alt=""
           className="aspect-square w-full object-cover object-center transition duration-500 ease-in-out hover:scale-110"
         />
       </div>
-      {/* <button className="h-10 bg-black text-white">Add to cart</button> */}
+
       <button className="group relative inline-flex items-center justify-center overflow-hidden bg-black p-4 px-6 py-1 font-medium text-black transition duration-500 ease-out">
         <span className="ease absolute inset-0 flex h-full w-full -translate-x-full items-center justify-center bg-brand/[200] text-black duration-300 group-hover:translate-x-0">
           <ShoppingBag size={20} />
