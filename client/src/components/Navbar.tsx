@@ -169,43 +169,53 @@ export default function Navbar() {
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-2" className="border-none bg-inherit">
-                <AccordionTrigger>Body</AccordionTrigger>
+                <AccordionTrigger className="bg-inherit">Body</AccordionTrigger>
                 <AccordionContent>
                   Yes. It adheres to the WAI-ARIA design pattern.
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-3" className="border-none bg-inherit">
-                <AccordionTrigger>Hair</AccordionTrigger>
+                <AccordionTrigger className="bg-inherit">Hair</AccordionTrigger>
                 <AccordionContent>
                   Yes. It adheres to the WAI-ARIA design pattern.
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-4" className="border-none bg-inherit">
-                <AccordionTrigger>Gifting</AccordionTrigger>
+                <AccordionTrigger className="bg-inherit">
+                  Gifting
+                </AccordionTrigger>
                 <AccordionContent>
                   Yes. It adheres to the WAI-ARIA design pattern.
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-5" className="border-none bg-inherit">
-                <AccordionTrigger>Trending</AccordionTrigger>
+                <AccordionTrigger className="bg-inherit">
+                  Trending
+                </AccordionTrigger>
                 <AccordionContent>
                   Yes. It adheres to the WAI-ARIA design pattern.
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-6" className="border-none bg-inherit">
-                <AccordionTrigger>Collections</AccordionTrigger>
+                <AccordionTrigger className="bg-inherit">
+                  Collections
+                </AccordionTrigger>
                 <AccordionContent>
                   Yes. It adheres to the WAI-ARIA design pattern.
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-7" className="border-none bg-inherit">
-                <AccordionTrigger>Men's</AccordionTrigger>
+                <AccordionTrigger className="bg-inherit">
+                  Men's
+                </AccordionTrigger>
                 <AccordionContent>
                   Yes. It adheres to the WAI-ARIA design pattern.
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-8" className="border-none bg-inherit">
-                <AccordionTrigger>Fragrances</AccordionTrigger>
+                <AccordionTrigger className="bg-inherit">
+                  Fragrances
+                </AccordionTrigger>
                 <AccordionContent>
                   Yes. It adheres to the WAI-ARIA design pattern.
                 </AccordionContent>
