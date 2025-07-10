@@ -6,17 +6,17 @@ export default function PopularProducts() {
     {
       id: 1,
       productName: "Vitamin C Extract",
-      price: 100,
+      price: "100.00",
     },
     {
       id: 2,
       productName: "Anti Aging Moisturiser",
-      price: 100,
+      price: "100.00",
     },
     {
       id: 3,
       productName: "Skin Care",
-      price: 100,
+      price: "100.00",
     },
   ];
   return (

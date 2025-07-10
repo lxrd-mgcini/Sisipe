@@ -5,22 +5,22 @@ export default function NewProducts() {
     {
       id: 1,
       productName: "Skin Care",
-      price: 100,
+      price: "100.00",
     },
     {
       id: 2,
       productName: "Skin Care",
-      price: 100,
+      price: "100.00",
     },
     {
       id: 3,
       productName: "Skin Care",
-      price: 100,
+      price: "100.00",
     },
     {
       id: 4,
       productName: "Skin Care",
-      price: 100,
+      price: "100.00",
     },
   ];
   return (
