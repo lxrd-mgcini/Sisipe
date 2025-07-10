@@ -26,7 +26,7 @@ export default {
 				},
 				tertiary: '#d9d9d99e',
 				background: 'hsl(var(--background))',
-				brand: '#e8d1af80',
+				brand: '#fff0d9',
 				black: '#4a463f',
 				black75: '#504D4A',
 				black50: '#77736E',

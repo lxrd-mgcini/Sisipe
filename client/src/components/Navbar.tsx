@@ -1,11 +1,7 @@
 import { MapPin, Menu, Search, ShoppingBag, UserRound, X } from "lucide-react";
 import { SetStateAction, useState } from "react";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+import { Link } from "react-router";
+import MobileMenu from "./MobileMenu";
 
 export default function Navbar() {
   const [activeTab, setActiveTab] = useState(0);
@@ -157,71 +153,7 @@ export default function Navbar() {
     return (
       <div className="fixed right-[0px] top-0 z-30 flex w-full flex-col bg-black/35 pl-32">
         <div className="flex h-screen items-start gap-2 bg-white px-4 pt-14">
-          <ul className="flex-[9]">
-            <Accordion type="single" collapsible className="bg-white">
-              <AccordionItem value="item-1" className="border-none bg-inherit">
-                <AccordionTrigger className="bg-inherit">Skin</AccordionTrigger>
-                <AccordionContent>
-                  Yes. It adheres to the WAI-ARIA design pattern.
-                </AccordionContent>
-                <AccordionContent>
-                  Yes. It adheres to the WAI-ARIA design pattern.
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-2" className="border-none bg-inherit">
-                <AccordionTrigger className="bg-inherit">Body</AccordionTrigger>
-                <AccordionContent>
-                  Yes. It adheres to the WAI-ARIA design pattern.
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-3" className="border-none bg-inherit">
-                <AccordionTrigger className="bg-inherit">Hair</AccordionTrigger>
-                <AccordionContent>
-                  Yes. It adheres to the WAI-ARIA design pattern.
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-4" className="border-none bg-inherit">
-                <AccordionTrigger className="bg-inherit">
-                  Gifting
-                </AccordionTrigger>
-                <AccordionContent>
-                  Yes. It adheres to the WAI-ARIA design pattern.
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-5" className="border-none bg-inherit">
-                <AccordionTrigger className="bg-inherit">
-                  Trending
-                </AccordionTrigger>
-                <AccordionContent>
-                  Yes. It adheres to the WAI-ARIA design pattern.
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-6" className="border-none bg-inherit">
-                <AccordionTrigger className="bg-inherit">
-                  Collections
-                </AccordionTrigger>
-                <AccordionContent>
-                  Yes. It adheres to the WAI-ARIA design pattern.
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-7" className="border-none bg-inherit">
-                <AccordionTrigger className="bg-inherit">
-                  Men's
-                </AccordionTrigger>
-                <AccordionContent>
-                  Yes. It adheres to the WAI-ARIA design pattern.
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-8" className="border-none bg-inherit">
-                <AccordionTrigger className="bg-inherit">
-                  Fragrances
-                </AccordionTrigger>
-                <AccordionContent>
-                  Yes. It adheres to the WAI-ARIA design pattern.
-                </AccordionContent>
-              </AccordionItem>
-            </Accordion>
-          </ul>
+          <MobileMenu />
           <button
             className="flex h-6 w-6 flex-[1] bg-inherit"
             onClick={() => {
@@ -256,9 +188,11 @@ export default function Navbar() {
             color="#4a463f"
           />
         </div>
-        <h1 className="ml-auto mr-auto flex cursor-pointer text-4xl font-semibold text-black">
-          Sisipe
-        </h1>
+        <Link to="/">
+          <h1 className="ml-auto mr-auto flex cursor-pointer text-4xl font-semibold text-black">
+            Sisipe
+          </h1>
+        </Link>
         <div className="flex gap-4">
           <ShoppingBag
             className="hidden cursor-pointer gap-4 sm:flex"
@@ -282,8 +216,8 @@ export default function Navbar() {
           {mobileNavOpen && <MobileNav />}
         </div>
       </div>
-      <div className="mb-4 mt-4 flex w-full justify-center font-light text-black">
-        <ul className="md:text-md mb-4 hidden gap-8 md:ml-4 md:mr-4 md:flex">
+      <div className="mb-2 mt-2 flex w-full justify-center font-light text-black">
+        <ul className="md:text-md mb-2 hidden gap-8 md:ml-4 md:mr-4 md:flex">
           <div>
             <li
               onClick={() => handleTabClick(1)}

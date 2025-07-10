@@ -19,7 +19,7 @@ export default function Footer() {
             {/* <button className="bg-white px-4 py-2 text-black">Subscribe</button> */}
 
             <button className="group relative inline-flex items-center justify-center overflow-hidden bg-black px-1 py-1 font-medium text-black transition duration-500 ease-out">
-              <span className="ease bg-primary/[200] absolute inset-0 flex h-full w-full -translate-x-full items-center justify-center text-black duration-300 group-hover:translate-x-0">
+              <span className="ease absolute inset-0 flex h-full w-full -translate-x-full items-center justify-center bg-primary/[200] text-black duration-300 group-hover:translate-x-0">
                 <Mail size={20} />
               </span>
               <span className="ease absolute flex h-full w-full transform items-center justify-center text-white transition-all duration-300 group-hover:translate-x-full">
@@ -34,10 +34,10 @@ export default function Footer() {
           </p>
 
           <div className="mt-4 flex gap-4">
-            <Instagram className="hover:text-background transition duration-300 ease-in-out hover:scale-125 hover:cursor-pointer" />
-            <Facebook className="hover:text-background transition duration-300 ease-in-out hover:scale-125 hover:cursor-pointer" />
-            <Twitter className="hover:text-background transition duration-300 ease-in-out hover:scale-125 hover:cursor-pointer" />
-            <Youtube className="hover:text-background transition duration-300 ease-in-out hover:scale-125 hover:cursor-pointer" />
+            <Instagram className="transition duration-300 ease-in-out hover:scale-125 hover:cursor-pointer hover:text-background" />
+            <Facebook className="transition duration-300 ease-in-out hover:scale-125 hover:cursor-pointer hover:text-background" />
+            <Twitter className="transition duration-300 ease-in-out hover:scale-125 hover:cursor-pointer hover:text-background" />
+            <Youtube className="transition duration-300 ease-in-out hover:scale-125 hover:cursor-pointer hover:text-background" />
           </div>
         </div>
 
@@ -64,7 +64,7 @@ export default function Footer() {
         <div className="lg: flex flex-col justify-self-start sm:justify-self-start md:justify-self-start lg:justify-self-center">
           <p className="font-semibold">Contact Us</p>
           <p className="font-light">
-            Cnr 9th Avenue, J.M.Nkomo St,
+            Cnr 11th Avenue, J.M.Nkomo St,
             <br />
             Bulawayo <br />
             +263 712 345 6789 <br />

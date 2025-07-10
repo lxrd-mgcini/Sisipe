@@ -1,29 +1,23 @@
-import { ShoppingBag } from "lucide-react";
-
 type Props = {
   productName: string;
-  price: number;
+  price: string;
+  imgUrl?: string;
 };
 
-export default function Card({ productName, price }: Props) {
+export default function Card({ productName, price, imgUrl }: Props) {
   return (
     <div className="flex aspect-square h-full w-full flex-1 flex-col text-center">
       <div className="relative aspect-square h-max w-full overflow-hidden">
         <img
-          src="/images/body-care.jpg"
+          src={imgUrl || "/images/body-care.jpg"}
           alt=""
-          className="h-[100vw] w-full object-cover object-center transition duration-500 ease-in-out hover:scale-110 sm:h-full"
+          className="h-[100vw] min-w-full object-cover object-center transition duration-500 ease-in-out hover:scale-110 sm:h-full"
         />
       </div>
 
-      <button className="group relative inline-flex items-center justify-center overflow-hidden bg-black p-4 px-6 py-1 font-medium text-black transition duration-500 ease-out">
-        <span className="ease absolute inset-0 flex h-full w-full -translate-x-full items-center justify-center bg-brand/[200] text-black duration-300 group-hover:translate-x-0">
-          <ShoppingBag size={20} />
-        </span>
-        <span className="ease absolute flex h-full w-full transform items-center justify-center text-white transition-all duration-300 group-hover:translate-x-full">
-          View Product
-        </span>
-        <span className="invisible relative">View Product</span>
+      <button className="group relative inline-block w-full self-center overflow-hidden bg-black px-5 py-2 font-medium text-white">
+        <span className="backdrop-brightness-10 absolute left-0 top-0 mb-0 flex h-0 w-full translate-y-0 transform bg-brand transition-all duration-300 ease-out group-hover:h-full"></span>
+        <span className="relative group-hover:text-black">Add to Cart</span>
       </button>
 
       <h3 className="mt-1 font-semibold">{productName}</h3>
