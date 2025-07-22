@@ -1,9 +1,10 @@
 import Announcement from "@/components/Announcement";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+import QuantitySelector from "@/components/QuantitySelector";
 import MainLayout from "@/layout/MainLayout";
-import { Minus, Plus, ShoppingBag } from "lucide-react";
-import { useState } from "react";
+import { ShoppingBag } from "lucide-react";
+
 import { Link } from "react-router";
 
 export default function Product() {
@@ -20,13 +21,13 @@ export default function Product() {
       "/images/body-care.jpg",
     ],
   };
-  const [count, setCount] = useState(1);
+
   return (
     <div className="relative max-w-full">
       <Announcement />
       <Navbar />
       <MainLayout>
-        <div className="flex gap-4">
+        <div className="flex flex-col-reverse gap-4 sm:flex-row">
           <div className="flex flex-1 flex-col gap-4">
             <div className="h-[60vh]">
               <img
@@ -36,7 +37,7 @@ export default function Product() {
               />
             </div>
 
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
               <div className="h-[30vh]">
                 <img
                   className="h-full w-full object-cover object-center"
@@ -61,7 +62,7 @@ export default function Product() {
                 <h3 className="mt-8 text-4xl font-medium">{product.name}</h3>
                 <h4 className="mt-8 text-4xl font-light">${product.price}</h4>
                 <p className="mt-4">{product.description}</p>
-                <div className="mt-4 flex justify-center gap-4">
+                <div className="my-8 flex justify-center gap-4">
                   <p>
                     <strong>Category</strong>: Cosmetics
                   </p>
@@ -82,27 +83,9 @@ export default function Product() {
 
             <div>
               <p className="underline">Quantity Details</p>
-              <div className="flex h-[64px] gap-4 pt-4">
-                <div className="flex w-fit bg-brand">
-                  <button
-                    className="px-6 py-3"
-                    onClick={() => {
-                      count > 1 && setCount(count - 1);
-                    }}
-                  >
-                    <Minus />
-                  </button>
-                  <span className="px-6 py-1 text-3xl font-normal">
-                    {count}
-                  </span>
-                  <button
-                    className="px-6 py-3"
-                    onClick={() => setCount(count + 1)}
-                  >
-                    <Plus />
-                  </button>
-                </div>
-                <button className="flex w-full items-center justify-center gap-2 bg-black text-white transition duration-300 hover:scale-105">
+              <div className="flex flex-col gap-4 pt-4 lg:flex-row">
+                <QuantitySelector />
+                <button className="flex h-[64px] w-full items-center justify-center gap-2 bg-black text-white transition duration-300 hover:scale-105">
                   <ShoppingBag size={20} /> Add to Cart
                 </button>
               </div>
