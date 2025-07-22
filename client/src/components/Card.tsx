@@ -15,12 +15,16 @@ export default function Card({ productName, price, imgUrl }: Props) {
         />
       </div>
 
-      <button className="group relative inline-block w-full self-center overflow-hidden bg-black px-5 py-2 font-medium text-white">
+      <button className="group relative flex w-full items-center self-center overflow-hidden bg-black px-5 py-2 font-medium text-white">
         <span className="backdrop-brightness-10 absolute left-0 top-0 mb-0 flex h-0 w-full translate-y-0 transform bg-brand transition-all duration-300 ease-out group-hover:h-full"></span>
-        <span className="relative group-hover:text-black">Add to Cart</span>
+        <span className="relative w-full items-center self-center text-center group-hover:text-black">
+          Add to Cart
+        </span>
       </button>
 
-      <h3 className="mt-1 font-semibold">{productName}</h3>
+      <h3 className="mt-1 w-full overflow-hidden text-ellipsis text-nowrap font-semibold">
+        {productName}
+      </h3>
       <p className="">${price}</p>
     </div>
   );

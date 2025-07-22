@@ -22,9 +22,9 @@ export const Products = () => {
     },
     {
       id: 3,
-      name: "Revitalift Triple Power Age-Defying Serum",
+      name: "Revitalift Triple Power Age-Defying",
       price: "24.00",
-      imgUrl: "/images/skincare-img-5-768x960.jpg",
+      imgUrl: "/images/make-up-img-1-768x960.jpg",
     },
     {
       id: 4,
@@ -34,7 +34,7 @@ export const Products = () => {
     },
     {
       id: 5,
-      name: "Glycolic + Gloss High Shine Leave-in Serum",
+      name: "Glycolic + Gloss High Shine",
       price: "9.00",
       imgUrl: "/images/Lip gloss.jpg",
     },
@@ -46,9 +46,27 @@ export const Products = () => {
     },
     {
       id: 7,
-      name: "Triple Power Moisturizer With SPF 30",
+      name: "Triple Power Moisturizer With SPF 30 ",
       price: "30.00",
       imgUrl: "/images/make-up-img-4-768x960.jpg",
+    },
+    {
+      id: 8,
+      name: "pH Hyaluron Lip Oil",
+      price: "14.00",
+      imgUrl: "/images/make-up-img-1-768x960.jpg",
+    },
+    {
+      id: 9,
+      name: "Glycolic + Gloss High Shine Leave-in Serum",
+      price: "9.00",
+      imgUrl: "/images/Lip gloss.jpg",
+    },
+    {
+      id: 10,
+      name: "Lacque Resistance Liquid Lipstick",
+      price: "14.00",
+      imgUrl: "/images/make-up-img-2.jpg",
     },
   ];
   return (
@@ -57,7 +75,7 @@ export const Products = () => {
       <Navbar />
       <Tags />
       <MainLayout>
-        <div className="mt-9 grid grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {products.map((product) => {
             return (
               <Link to={`/products/${product.id}`}>

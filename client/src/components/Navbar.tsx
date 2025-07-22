@@ -178,7 +178,7 @@ export default function Navbar() {
       <div className="ml-4 mr-4 flex h-[72px] items-center justify-between overflow-hidden">
         <div className="flex gap-4">
           <Search
-            className="hidden cursor-pointer gap-4 sm:flex"
+            className="cursor-pointer gap-4 sm:flex"
             size={24}
             color="#4a463f"
           />
