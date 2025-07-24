@@ -199,11 +199,13 @@ export default function Navbar() {
             size={24}
             color="#4a463f"
           />
-          <UserRound
-            className="hidden cursor-pointer gap-4 sm:flex"
-            size={24}
-            color="#4a463f"
-          />
+          <Link to="/login">
+            <UserRound
+              className="hidden cursor-pointer gap-4 sm:flex"
+              size={24}
+              color="#4a463f"
+            />
+          </Link>
           <Menu
             onClick={() => {
               console.log(mobileNavOpen);
