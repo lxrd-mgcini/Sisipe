@@ -3,7 +3,7 @@ import { SidebarProvider } from "@/components/ui/sidebar";
 import { DashboardContent } from "@/components/dashboard-content";
 import { AppSidebar } from "@/components/app-sidebar";
 import { Orders } from "@/components/orders";
-import { Products } from "@/components/products";
+// import { Products } from "@/components/products";
 // import { DashboardContent } from "@/components/dashboard-content";
 // import { OrdersPage } from "@/components/orders-page";
 // import { ProductsPage } from "@/components/products-page";
