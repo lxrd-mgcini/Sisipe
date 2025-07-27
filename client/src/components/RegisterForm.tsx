@@ -7,7 +7,7 @@ export function RegisterForm() {
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [rememberMe, setRememberMe] = useState(false);
+
 
   return (
     <div className="mx-auto max-w-[400px] space-y-6 p-8">

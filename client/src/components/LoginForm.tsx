@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Checkbox } from "@/components/ui/checkbox";
+;
 import { Eye, EyeOff } from "lucide-react";
 import { Link } from "react-router";
 
@@ -9,10 +9,10 @@ export function LoginForm() {
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [rememberMe, setRememberMe] = useState(false);
+  
 
   return (
-    <div className="mx-auto max-w-[400px] space-y-6 p-8">
+    <div className="mx-auto max-w-[400px] space-y-3 p-4 sm:space-y-6 sm:p-8">
       <div className="space-y-2 text-center">
         <h1 className="text-3xl font-semibold text-black">My Account</h1>
         <p className="font-medium text-gray-500">Login</p>
