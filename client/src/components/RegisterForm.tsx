@@ -2,12 +2,12 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Eye, EyeOff } from "lucide-react";
+import { Link } from "react-router";
 
 export function RegisterForm() {
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
 
   return (
     <div className="mx-auto max-w-[400px] space-y-6 p-8">
@@ -73,9 +73,12 @@ export function RegisterForm() {
 
         <p className="text-center text-sm text-gray-600">
           {"Already have an account? "}
-          <a href="#" className="font-semibold text-black hover:underline">
+          <Link
+            to="/register"
+            className="font-semibold text-black hover:underline"
+          >
             Login now.
-          </a>
+          </Link>
         </p>
       </form>
     </div>

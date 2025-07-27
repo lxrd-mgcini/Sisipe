@@ -1,11 +1,10 @@
 import { BrowserRouter, Routes, Route } from "react-router";
 import Home from "./pages/Home";
-
 import { Products } from "./pages/Products";
 import Product from "./pages/Product";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
-import { Dashboard } from "./pages/Dashboard";
+import Dashboard from "./pages/Dashboard";
 
 function App() {
   return (

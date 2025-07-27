@@ -11,7 +11,7 @@ import { Orders } from "@/components/orders";
 // import { AnalyticsPage } from "@/components/analytics-page";
 // import { ReportsPage } from "@/components/reports-page";
 
-export function Dashboard() {
+export default function Dashboard() {
   const [currentPage, setCurrentPage] = useState("dashboard");
 
   const renderPage = () => {
