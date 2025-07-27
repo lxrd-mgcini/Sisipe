@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-;
 import { Eye, EyeOff } from "lucide-react";
 import { Link } from "react-router";
 
@@ -9,7 +8,6 @@ export function LoginForm() {
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  
 
   return (
     <div className="mx-auto max-w-[400px] space-y-3 p-4 sm:space-y-6 sm:p-8">
@@ -83,6 +81,9 @@ export function LoginForm() {
           </Link>
         </p>
       </form>
+      <Link to="/admin" className="font-semibold text-black hover:underline">
+        Aunty, click here to see the dashboard.
+      </Link>
     </div>
   );
 }
