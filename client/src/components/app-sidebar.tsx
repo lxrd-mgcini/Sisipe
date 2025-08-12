@@ -129,7 +129,7 @@ export function AppSidebar({
           <div className="min-w-0 flex-1">
             <p className="truncate text-sm font-medium">Admin</p>
             <p className="truncate text-xs text-muted-foreground">
-              dorcus@sisipe.com
+              dorcas@sisipe.com
             </p>
           </div>
         </div>
