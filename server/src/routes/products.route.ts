@@ -1,6 +1,15 @@
 import { Router } from "express";
-import { getAllProductsController } from "../controllers/products.controller";
+import {
+  createProductController,
+  deleteProductByIdController,
+  getAllProductsController,
+  updateProductByIdController,
+} from "../controllers/products.controller";
+import { config } from "../config/app.config";
 
 export const productRoutes = Router();
 
-productRoutes.get("/api/v1/products", getAllProductsController);
+productRoutes.get(`/products`, getAllProductsController);
+productRoutes.post(`/products`, createProductController);
+productRoutes.delete(`/products/:id`, deleteProductByIdController);
+productRoutes.put(`/products/:id`, updateProductByIdController);

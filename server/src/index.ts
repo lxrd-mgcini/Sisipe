@@ -2,6 +2,7 @@ import express, { Request, Response } from "express";
 import { productRoutes } from "./routes/products.route";
 import { connectToDatabase } from "./config/database.config";
 import { config } from "./config/app.config";
+import { errorHandler } from "./middlewares/errorHandler.middleware";
 
 const app = express();
 
@@ -10,7 +11,9 @@ app.get("", (req: Request, res: Response) => {
 });
 
 app.use(express.json());
-app.use(productRoutes);
+app.use(`${config.BASE_PATH}`, productRoutes);
+
+app.use(errorHandler)
 
 app.listen(8800, () => {
   console.log(`Server running on port ${config.PORT}`);
