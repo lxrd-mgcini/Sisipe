@@ -10,6 +10,7 @@ export const createProductService = async (data: {
   price: number;
   description: string;
   imgUrl: string;
+  tags: string[];
 }) => {
   const product = new ProductModel(data);
   await product.save();
@@ -40,4 +41,19 @@ export const updateProductByIdService = async (
     throw new Error("Product not found");
   }
   return product;
+};
+
+export const getProductByIdService = async (productId: string) => {
+  const product = await ProductModel.find({ _id: productId });
+
+  if (!product) {
+    throw new Error("Product not Found");
+  }
+
+  return product;
+};
+
+export const getProductByTagsService = async (tags: string[]) => {
+  const products = await ProductModel.find({ tags: { $in: tags } });
+  return products;
 };
