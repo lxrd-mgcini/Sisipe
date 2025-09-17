@@ -28,6 +28,47 @@ export const VERIFICATION_EMAIL_TEMPLATE = `
 </html>
 `;
 
+export const WELCOME_EMAIL_TEMPLATE = `
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Welcome to Sisipe</title>
+    </head>
+    <body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
+      <div style="background: linear-gradient(to right, #4CAF50, #45a049); padding: 20px; text-align: center;">
+        <h1 style="color: white; margin: 0;">Welcome to Sisipe</h1>
+      </div>
+      <div style="background-color: #f9f9f9; padding: 20px; border-radius: 0 0 5px 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+        <p>Hello there,</p>
+        <p>Welcome to Sisipe, your destination for premium skincare products!</p>    
+      
+        <p>If you have any questions or need assistance, feel free to reach out to our customer support.</p>
+        <p>Thank you for choosing Sisipe for your skincare needs.</p>
+        <p>Best regards,<br>The Sisipe Team</p>
+        <br/>
+        <div style="padding: 20px;">
+        <h2 style="text-align: center; color: #4CAF50;;">Check Out Our Latest Products</h2>
+        <div style="display: flex; gap:2rem; justify-content:center">
+          <div>
+            <img src="https://sisipe.vercel.app/images/make-up-img-2.jpg" alt="Product 1" style="width: 200px; height: 200px; cursor:pointer">
+            <p style="text-align: center;font-weight:bold">Lacque Liquid Lipstick</p>
+          </div>
+          <div>
+            <img src="https://sisipe.vercel.app/images/make-up-img-4-768x960.jpg" alt="Product 2" style="width: 200px; height: 200px; cursor:pointer">
+            <p style="text-align: center; font-weight:bold">pH Hyaluron Lip Oil</p>
+          </div>
+        </div>
+      </div>
+      
+      </div>
+      <div style="text-align: center; margin-top: 20px; color: #888; font-size: 0.8em;">
+        <p>This is an automated message, please do not reply to this email.</p>
+      </div>
+    </body>
+  </html>
+  `;
+
 export const PASSWORD_RESET_SUCCESS_TEMPLATE = `
 <!DOCTYPE html>
 <html lang="en">

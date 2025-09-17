@@ -6,11 +6,12 @@ export interface UserDocument extends Document {
   email: string;
   password: string;
   role: RoleEnum;
+  verified: boolean;
   verificationCode: string;
   verificationCodeExpiryDate: Date;
   resetPasswordToken: string;
   resetPasswordExpiryDate: Date;
-  _doc:any
+  _doc: any;
 }
 
 const userSchema = new Schema<UserDocument>(
@@ -37,6 +38,10 @@ const userSchema = new Schema<UserDocument>(
       default: RoleEnum.USER,
       required: true,
       trim: true,
+    },
+    verified: {
+      type: Boolean,
+      default: false,
     },
     verificationCode: String,
     verificationCodeExpiryDate: Date,

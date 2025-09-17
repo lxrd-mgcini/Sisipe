@@ -1,7 +1,10 @@
 import { config } from "../config/app.config";
 import { Resend } from "resend";
 import { mailConfig } from "../config/mail.config";
-import { VERIFICATION_EMAIL_TEMPLATE } from "./templates/auth";
+import {
+  VERIFICATION_EMAIL_TEMPLATE,
+  WELCOME_EMAIL_TEMPLATE,
+} from "./templates/auth";
 import { MailerParams } from "../@types";
 
 const resend = new Resend(config.RESEND_API_KEY);
@@ -19,6 +22,15 @@ export const sendVerificationEmail = async (
       "{verificationCode}",
       verificationCode
     ),
+    subject: "Verify your email",
+  });
+};
+
+export const sendWelcomeEmail = async (recipient: string) => {
+  sendEmail({
+    to: [recipient],
+    from: mailConfig.NO_REPLY_EMAIL_ADDRESS,
+    html: WELCOME_EMAIL_TEMPLATE,
     subject: "Verify your email",
   });
 };

@@ -1,7 +1,7 @@
 import { UserType } from "../@types";
 import { config } from "../config/app.config";
 
-import { sendVerificationEmail } from "../mailers/mailer";
+import { sendVerificationEmail, sendWelcomeEmail } from "../mailers/mailer";
 
 import UserModel from "../models/user.model";
 import { generateJWT } from "../utils/jwt";
@@ -17,7 +17,7 @@ export const registerUserService = async (data: UserType) => {
   }
 
   const verificationCode = generateVerificationCode();
-  const verificationCodeExpiryDate = Date.now() + 1 * 60 * 60 * 1000;
+  const verificationCodeExpiryDate = Date.now() + 2 * 60 * 60 * 1000;
 
   const hashedPassword = await bcrypt.hash(password, config.AUTH_SALT);
 
@@ -30,6 +30,7 @@ export const registerUserService = async (data: UserType) => {
   });
 
   await user.save();
+
   const token = generateJWT(user.id);
 
   await sendVerificationEmail(user.email, user.verificationCode);
@@ -37,4 +38,23 @@ export const registerUserService = async (data: UserType) => {
   return { user, token };
 };
 
-export const loginUserService = async () => {};
+// TO-DO : use updateOne function to search and update the record as one query
+export const verifyUserService = async (verificationCode: string) => {
+  const user = await UserModel.findOne({
+    verificationCode: verificationCode,
+    verificationCodeExpiryDate: { $gt: Date.now() },
+  });
+
+  if (!user) {
+    throw new Error("Invalid or expired verification code");
+  }
+
+  user.set("verified", true);
+  user.set("verificationCode", undefined);
+  user.set("verificationCodeExpiryDate", undefined);
+
+  await user.save();
+  await sendWelcomeEmail(user.email);
+
+  return user;
+};
