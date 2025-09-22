@@ -10,7 +10,7 @@ export interface UserDocument extends Document {
   verificationCode: string;
   verificationCodeExpiryDate: Date;
   resetPasswordToken: string;
-  resetPasswordExpiryDate: Date;
+  resetPasswordExpiryDate: number;
   _doc: any;
 }
 

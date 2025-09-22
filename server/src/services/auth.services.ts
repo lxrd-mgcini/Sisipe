@@ -1,7 +1,13 @@
 import { UserType } from "../@types";
 import { config } from "../config/app.config";
 
-import { sendVerificationEmail, sendWelcomeEmail } from "../mailers/mailer";
+import { randomBytes } from "node:crypto";
+
+import {
+  sendPasswordResetEmail,
+  sendVerificationEmail,
+  sendWelcomeEmail,
+} from "../mailers/mailer";
 
 import UserModel from "../models/user.model";
 import { generateJWT } from "../utils/jwt";
@@ -38,6 +44,29 @@ export const registerUserService = async (data: UserType) => {
   return { user, token };
 };
 
+export const loginUserService = async (data: {
+  email: string;
+  password: string;
+}) => {
+  const { email, password } = data;
+
+  const user = await UserModel.findOne({ email });
+
+  if (!user) {
+    throw new Error("Invalid credentials");
+  }
+
+  const isPasswordValid = bcrypt.compare(password, user.password);
+
+  if (!isPasswordValid) {
+    throw new Error("Invalid credentials");
+  }
+
+  const token = generateJWT(user.id);
+
+  return { user, token };
+};
+
 // TO-DO : use updateOne function to search and update the record as one query
 export const verifyUserService = async (verificationCode: string) => {
   const user = await UserModel.findOne({
@@ -57,4 +86,27 @@ export const verifyUserService = async (verificationCode: string) => {
   await sendWelcomeEmail(user.email);
 
   return user;
+};
+
+export const forgotPasswordService = async (email: string) => {
+  const user = await UserModel.findOne({ email });
+
+  if (!user) {
+    throw new Error("User not found");
+  }
+
+  const resetToken = randomBytes(20).toString("hex");
+  const resetPasswordExpiryDate = Date.now() + 1 * 60 * 60 * 1000;
+
+  user.resetPasswordToken = resetToken;
+  user.resetPasswordExpiryDate = resetPasswordExpiryDate;
+
+  await user.save();
+
+  await sendPasswordResetEmail(
+    user.email,
+    `${config.CLIENT_URL}/reset-password/${resetToken}`
+  );
+
+  return resetToken;
 };

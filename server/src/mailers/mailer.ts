@@ -2,6 +2,7 @@ import { config } from "../config/app.config";
 import { Resend } from "resend";
 import { mailConfig } from "../config/mail.config";
 import {
+  PASSWORD_RESET_REQUEST_TEMPLATE,
   VERIFICATION_EMAIL_TEMPLATE,
   WELCOME_EMAIL_TEMPLATE,
 } from "./templates/auth";
@@ -32,6 +33,18 @@ export const sendWelcomeEmail = async (recipient: string) => {
     from: mailConfig.NO_REPLY_EMAIL_ADDRESS,
     html: WELCOME_EMAIL_TEMPLATE,
     subject: "Verify your email",
+  });
+};
+
+export const sendPasswordResetEmail = async (
+  recipient: string,
+  resetURL: string
+) => {
+  sendEmail({
+    to: [recipient],
+    from: mailConfig.NO_REPLY_EMAIL_ADDRESS,
+    html: PASSWORD_RESET_REQUEST_TEMPLATE.replace("{resetURL}", resetURL),
+    subject: "Reset your password",
   });
 };
 

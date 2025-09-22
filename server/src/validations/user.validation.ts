@@ -8,9 +8,13 @@ export const verificationCodeSchema = z.object({
   verificationCode: z.string().length(6).trim(),
 });
 
+export const forgotPasswordSchema = z.object({
+  email: emailSchema,
+});
+
 export const userLoginSchema = z.object({
   email: emailSchema,
-  passwordSchema: passwordSchema,
+  password: passwordSchema,
 });
 export const userRegistrationSchema = z.object({
   email: emailSchema,
