@@ -5,6 +5,7 @@ import { randomBytes } from "node:crypto";
 
 import {
   sendPasswordResetEmail,
+  sendResetSuccessEmail,
   sendVerificationEmail,
   sendWelcomeEmail,
 } from "../mailers/mailer";
@@ -109,4 +110,26 @@ export const forgotPasswordService = async (email: string) => {
   );
 
   return resetToken;
+};
+
+export const resetPasswordService = async (
+  resetToken: string,
+  password: string
+) => {
+  const user = await UserModel.findOne({
+    resetPasswordToken: resetToken,
+    resetPasswordExpiryDate: { $gt: Date.now() },
+  });
+
+  if (!user) {
+    throw new Error("User not found or expired reset token");
+  }
+
+  user.password = await bcrypt.hash(password, config.AUTH_SALT);
+  user.set("resetPasswordExpiryDate", undefined);
+  user.set("resetPasswordToken", undefined);
+
+  await sendResetSuccessEmail(user.email);
+
+  return user;
 };

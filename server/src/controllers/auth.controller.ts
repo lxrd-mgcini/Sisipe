@@ -2,6 +2,8 @@ import { Request, Response } from "express";
 import { asyncHandler } from "../middlewares/asyncHandler.middleware";
 import {
   forgotPasswordSchema,
+  resetPasswordSchema,
+  resetTokenSchema,
   userLoginSchema,
   userRegistrationSchema,
   verificationCodeSchema,
@@ -10,6 +12,7 @@ import {
   forgotPasswordService,
   loginUserService,
   registerUserService,
+  resetPasswordService,
   verifyUserService,
 } from "../services/auth.services";
 import { HTTPSTATUS } from "../config/http.config";
@@ -84,5 +87,18 @@ export const forgotPasswordController = asyncHandler(async (req, res) => {
     message: "Reset URL sent to user email",
     success: true,
     resetToken: resetToken,
+  });
+});
+
+export const resetPasswordController = asyncHandler(async (req, res) => {
+  const resetToken = resetTokenSchema.parse(req.params.resetToken);
+  const { password } = resetPasswordSchema.parse(req.body);
+
+  const user = await resetPasswordService(resetToken, password);
+
+  res.status(HTTPSTATUS.CREATED).json({
+    message: "User password reset successfully",
+    success: true,
+    user: { ...user._doc, password: undefined },
   });
 });

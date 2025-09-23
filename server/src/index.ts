@@ -4,16 +4,19 @@ import { connectToDatabase } from "./config/database.config";
 import { config } from "./config/app.config";
 import { errorHandler } from "./middlewares/errorHandler.middleware";
 import { authRoutes } from "./routes/auth.routes";
-// import { usersRoutes } from "./routes/users.routes";
+import { isAuthenticated } from "./middlewares/auth.middleware";
+import cookieParser from "cookie-parser";
 
 const app = express();
+
+app.use(cookieParser());
 
 app.get("", (req: Request, res: Response) => {
   res.send({ msg: "Hello from the server" }).status(200);
 });
 
 app.use(express.json());
-app.use(`${config.BASE_PATH}`, productRoutes);
+app.use(`${config.BASE_PATH}/products`, isAuthenticated, productRoutes);
 app.use(`${config.BASE_PATH}`, authRoutes);
 
 app.use(errorHandler);

@@ -10,8 +10,8 @@ import { config } from "../config/app.config";
 
 export const productRoutes = Router();
 
-productRoutes.post(`/products`, createProductController);
-productRoutes.get(`/products`, getAllProductsController);
-productRoutes.get(`/products/:id`, getProductByIdController);
-productRoutes.put(`/products/:id`, updateProductByIdController);
-productRoutes.delete(`/products/:id`, deleteProductByIdController);
+productRoutes.post(`/`, createProductController);
+productRoutes.get(`/`, getAllProductsController);
+productRoutes.get(`/:id`, getProductByIdController);
+productRoutes.put(`/:id`, updateProductByIdController);
+productRoutes.delete(`/:id`, deleteProductByIdController);
