@@ -8,16 +8,16 @@ export const isAuthenticated = (
   next: NextFunction
 ) => {
   const token = req.cookies.token;
-  if (!token) throw new Error();
+  if (!token) throw new Error("Missing auth token. Please resgister or login");
   try {
     const decoded = jwt.verify(token, config.JWT_SECRET) as JwtPayload;
 
-    if (!decoded) throw new Error();
+    if (!decoded) throw new Error("Invalid or tempered token");
 
     req.userId = decoded.userId;
 
     next();
   } catch (error) {
-    throw new Error();
+    throw new Error("Invalid or missing token");
   }
 };

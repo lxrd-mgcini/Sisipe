@@ -10,7 +10,6 @@ import {
 
 export const authRoutes = Router();
 
-// authRoutes.post(`/auth/login`, loginUserController);
 authRoutes.post(`/auth/register`, registerUserController);
 authRoutes.post(`/auth/login`, loginUserController);
 authRoutes.post(`/auth/logout`, logOutUserController);

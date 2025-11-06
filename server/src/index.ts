@@ -6,14 +6,12 @@ import { errorHandler } from "./middlewares/errorHandler.middleware";
 import { authRoutes } from "./routes/auth.routes";
 import { isAuthenticated } from "./middlewares/auth.middleware";
 import cookieParser from "cookie-parser";
+import cors from "cors";
 
 const app = express();
 
 app.use(cookieParser());
-
-app.get("", (req: Request, res: Response) => {
-  res.send({ msg: "Hello from the server" }).status(200);
-});
+app.use(cors());
 
 app.use(express.json());
 app.use(`${config.BASE_PATH}/products`, isAuthenticated, productRoutes);

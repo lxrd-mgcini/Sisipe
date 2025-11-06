@@ -190,7 +190,7 @@ export default function Navbar() {
         </div>
         <Link to="/">
           <h1 className="ml-auto mr-auto flex cursor-pointer text-4xl font-semibold text-black">
-            Sisipe
+            ORUAQBLOOM
           </h1>
         </Link>
         <div className="flex gap-4">
